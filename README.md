@@ -11,7 +11,7 @@ CUDA tool set for non-C++ languages that provides similar functionality like Thr
 Project Page:
 [https://github.com/fynv/ThrustRTC](https://github.com/fynv/ThrustRTC)
 
-Quick Starting Guide:
+Documentations:
 [https://fynv.github.io/ThrustRTC/](https://fynv.github.io/ThrustRTC/)
 
 ## ScoreDraft
