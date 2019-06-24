@@ -1,1 +1,5 @@
 theme: jekyll-theme-time-machine
+
+plugins:
+  - jekyll-seo-tag
+  
