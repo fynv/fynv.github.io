@@ -4,7 +4,7 @@ This article tries to illustrate the fact that NVRTC can be a powerful tool for
 building GPU libraries that can be reused in an arbitary language that supports C/C++ interop.
 This has been the motivation of my "NVRTC Based GPU libraries" series of projects.
 
-## The best GPU library is not reusable in a different language
+## Importance and limitation of templates in GPU Libraries
 
 Computationally intensive libraries are mostly written in C/C++ or another compiled language. 
 Interpreted languages usually can also benefit from these libraries through library reusing. 
@@ -21,9 +21,9 @@ form, there is no way to reuse them in a language other than the one these libra
 ```cpp
 template<typename ForwardIterator , typename T >
 void thrust::replace(ForwardIterator first,
-					ForwardIterator last,
-					const T & old_value,
-					const T & new_value)
+                     ForwardIterator last,
+                     const T & old_value,
+                     const T & new_value)
 ```
 
 This is just a simple example of a function provided by Thrust. All parameters are templated. "T" can be
@@ -32,7 +32,7 @@ like this can be very powerful and useful, but they are only available to C++.
 
 ## Run-time compilation of GPU device code
 
-Run-time compilation is not a new thing for GPU programming. In graphics programming, we use it to compile 
+Run-time compilation is not a new thing to GPU programmers. In graphics programming, we use it to compile 
 shaders to adapt to different running environment. In OpenCL, we also use it as the default way to compile
 device code. In CUDA programming, however, we didn't have run-time compilation until CUDA 7.x. 
 Static compilation + templates has been the most popular paradigm for its efficiency. Now we have run-time
@@ -57,8 +57,8 @@ Here is the ThrustRTC function corresponding to thrust::replace:
 
 ```cpp
 bool TRTC_Replace(DVVectorLike& vec, 
-				const DeviceViewable& old_value, 
-				const DeviceViewable& new_value);
+                  const DeviceViewable& old_value, 
+                  const DeviceViewable& new_value);
 ```
 
 DVVectorLike and DeviceViewable are both host classes. They are abstract classes and their sub-classes
@@ -71,9 +71,9 @@ There are 2 interface functions that all Device Viewable Objects much implement:
 class DeviceViewable
 {
 public:
-	...
-	virtual std::string name_view_cls() const = 0;
-	virtual ViewBuf view() const = 0;
+    ...
+    virtual std::string name_view_cls() const = 0;
+    virtual ViewBuf view() const = 0;
 };
 ```
 
@@ -90,13 +90,13 @@ In the library we can have some built-in code (as string) like:
 template<T_Vec, T_Value>
 extern "C" __global__ 
 void replace(T_Vec view_vec, 
-			T_Value old_value,
-			T_Value new_value)
+             T_Value old_value,
+             T_Value new_value)
 {
-	uint32_t tid = threadIdx.x + blockIdx.x*blockDim.x;
-	if (tid>=view_vec.size()) return;
-	if (view_vec[idx] == (decltype(view_vec)::value_t)old_value) 
-		view_vec[idx] = (decltype(view_vec)::value_t)new_value;
+    uint32_t tid = threadIdx.x + blockIdx.x*blockDim.x;
+    if (tid>=view_vec.size()) return;
+    if (view_vec[idx] == (decltype(view_vec)::value_t)old_value) 
+        view_vec[idx] = (decltype(view_vec)::value_t)new_value;
 }
 
 ```
@@ -108,32 +108,32 @@ easily "instantiated" as something like:
 template<class _T>
 struct VectorView
 {
-	typedef _T value_t;
-	typedef _T& ref_t;
+    typedef _T value_t;
+    typedef _T& ref_t;
 
-	value_t* _data;
-	size_t _size;
+    value_t* _data;
+    size_t _size;
 
-	__device__ size_t size() const
-	{
-		return _size;
-	}
+    __device__ size_t size() const
+    {
+        return _size;
+    }
 
-	__device__ ref_t operator [](size_t idx)
-	{
-		return _data[idx];
-	}
+    __device__ ref_t operator [](size_t idx)
+    {
+        return _data[idx];
+    }
 };
 
 extern "C" __global__ 
 void replace(VectorView<float> view_vec, 
-			float old_value,
-			float new_value)
+             float old_value,
+             float new_value)
 {
-	uint32_t tid = threadIdx.x + blockIdx.x*blockDim.x;
-	if (tid>=view_vec.size()) return;
-	if (view_vec[idx] == (decltype(view_vec)::value_t)old_value) 
-		view_vec[idx] = (decltype(view_vec)::value_t)new_value;
+    uint32_t tid = threadIdx.x + blockIdx.x*blockDim.x;
+    if (tid>=view_vec.size()) return;
+    if (view_vec[idx] == (decltype(view_vec)::value_t)old_value) 
+        view_vec[idx] = (decltype(view_vec)::value_t)new_value;
 }
 
 ```
