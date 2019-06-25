@@ -6,8 +6,10 @@ Fei Yang, GPU software engineer working for NVIDIA, Beijing office.
 
 ## Programming GPU across the Language Boundaries
 
-This article tries to illustrate the fact that NVRTC can be a powerful tool for 
-building GPU libraries that can be reused in an arbitary language that supports C/C++ interop.
+This article tries to illustrate the fact that NVRTC + dynamic-instantiation can be a powerful
+CUDA programming paradigm for building GPU libraries that can be reused from an arbitary 
+language that supports C/C++ interop. 
+
 This has been the motivation of my "NVRTC Based GPU libraries" series of projects.
 
 [More](https://fynv.github.io/ProgrammingGPUAcrossTheLaunguageBoundaries.html)

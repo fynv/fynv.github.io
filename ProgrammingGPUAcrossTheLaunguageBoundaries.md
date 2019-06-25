@@ -1,7 +1,9 @@
 # Programming GPU across the Language Boundaries
 
-This article tries to illustrate the fact that NVRTC can be a powerful tool for 
-building GPU libraries that can be reused from an arbitary language that supports C/C++ interop.
+This article tries to illustrate the fact that NVRTC + dynamic-instantiation can be a powerful
+CUDA programming paradigm for building GPU libraries that can be reused from an arbitary 
+language that supports C/C++ interop. 
+
 This has been the motivation of my "NVRTC Based GPU libraries" series of projects.
 
 ## Importance and limitation of templates in GPU libraries
@@ -30,7 +32,7 @@ This is just a simple example of a function provided by Thrust. All parameters a
 anything that has a definition, and "ForwardIterator" should "T_*" or something compatible. Functions 
 like this can be very powerful and useful, but they are only available to C++.
 
-## Run-time compilation of GPU device code
+## Run-time compilation and dynamic-instantiation
 
 Run-time compilation is not a new thing to GPU programmers. In graphics programming, we use it to compile 
 shaders to adapt to different running environment. In OpenCL, we also use it as the default way to compile
@@ -210,7 +212,7 @@ CUDA runtime + static compilation + templates is also the officially recommended
 of CUDA programming. Before there is NVRTC, there seems to be little choice. Even after NVRTC 
 has been there, people still seldomly realize how the game can be changed.
 
-Here, we see that NVRTC + dynamic instantiation can be a serious alternative paradigm for 
+Here, we see that NVRTC + dynamic-instantiation can be a serious alternative paradigm for 
 CUDA programming in general. It is as powerful as templates, and it is portable, which is
 important for libraries. In addition, it reduces the library compilation time and generates
 very slim binary. These comes at a cost that an application can be quite slow when it is 
