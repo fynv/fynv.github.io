@@ -34,9 +34,8 @@ like this can be very powerful and useful, but they are only available to C++.
 
 Run-time compilation is not a new thing to GPU programmers. In graphics programming, we use it to compile 
 shaders to adapt to different running environment. In OpenCL, we also use it as the default way to compile
-device code. In CUDA programming, however, we didn't have run-time compilation until CUDA 7.x. 
-Static compilation + templates has been the most popular paradigm for its efficiency. Now we have run-time
-compilation for CUDA too, which is called NVRTC.
+device code. In CUDA programming, however, we didn't have run-time compilation until CUDA 7.x, the new 
+module of the CUDA SDK is called NVRTC. 
 
 Now let's see how run-time compilation can be used to build libraries as poweful as the template libraries
 while they are still reusable from another language. 
@@ -143,7 +142,7 @@ void replace(VectorView<float> view_vec,
 You can see that here we don't need to change the function body and only need to change
 the function header.
 
-### Why it is reusable
+### Why it is portable
 
 First, the compiler itself is nothing special as a C library, except that it is only available 
 as a shared library, don't know why NVIDIA doesn't provide a static version. It is used together
@@ -200,3 +199,36 @@ public class TRTC
     ...
 }
 ```
+
+## An alternative way to build CUDA libraries?
+
+It is not surprising that most existing CUDA libraries are based on CUDA runtime. 
+An important reason is that it is indeed very handy. Mixing both host code and device code 
+in a single source-file in the "same" language is attractive, and makes people believe 
+that knowing C++ programming is sufficient for them to program GPU. 
+CUDA runtime + static compilation + templates is also the officially recommended paradigm
+of CUDA programming. Before there is NVRTC, there seems to be little choice. Even after NVRTC 
+has been there, people still seldomly realize how the game can be changed.
+
+Here, we see that NVRTC + dynamic instantiation can be a serious alternative paradigm for 
+CUDA programming in general. It is as powerful as templates, and it is portable, which is
+important for libraries. In addition, it reduces the library compilation time and generates
+very slim binary. These comes at a cost that an application can be quite slow when it is 
+executed for the first time (the compilation time is moved to here!).
+
+The fact that CUDA is so widely used these days makes it a broad area to explore: 
+
+How does the alternative paradigm behave in each of the application fields of CUDA?
+
+At the time this article is written. I have only finished ThrustRTC, and it is first time we can 
+compare it with Thrust.
+
+The next fields I'm going to explore includes:
+
+* Matrix operations
+* Neural networks
+* Visualization
+
+Don't be surprised if you see some libraries named BlasRTC, DNNRTC or VisRTC.
+
+
