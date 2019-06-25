@@ -1,10 +1,10 @@
 # Programming GPU across the Language Boundaries
 
 This article tries to illustrate the fact that NVRTC can be a powerful tool for 
-building GPU libraries that can be reused in an arbitary language that supports C/C++ interop.
+building GPU libraries that can be reused from an arbitary language that supports C/C++ interop.
 This has been the motivation of my "NVRTC Based GPU libraries" series of projects.
 
-## Importance and limitation of templates in GPU Libraries
+## Importance and limitation of templates in GPU libraries
 
 Computationally intensive libraries are mostly written in C/C++ or another compiled language. 
 Interpreted languages usually can also benefit from these libraries through library reusing. 
@@ -16,7 +16,7 @@ However, there are exceptions, known as "template libraries". These libraries ar
 that are not compiled util they are used. In GPU programming, templates are especially interesting and
 indispensible because of the inefficiency of dynamic polymorphism in GPU programming models. One famous 
 example of this kind of libraries is Thrust. Because these libraries are provided in uncompiled 
-form, there is no way to reuse them in a language other than the one these libraries are programmed in.
+form, there is no way to reuse them from a language other than the one these libraries are programmed in.
 
 ```cpp
 template<typename ForwardIterator , typename T >
@@ -39,7 +39,9 @@ Static compilation + templates has been the most popular paradigm for its effici
 compilation for CUDA too, which is called NVRTC.
 
 Now let's see how run-time compilation can be used to build libraries as poweful as the template libraries
-while they are still reusable in another language. 
+while they are still reusable from another language. 
+
+### As powerful as templates
 
 First, it is not difficult to imagine that most problem that can be solved using template programming can 
 also be solved by automated string modifications of the source-code. The "instantiation" of a template is 
@@ -65,7 +67,7 @@ DVVectorLike and DeviceViewable are both host classes. They are abstract classes
 can contain data of different types, and the type information is recorded by the members of the run-time
 objects.
 
-There are 2 interface functions that all Device Viewable Objects much implement:
+There are 2 interface functions that each Device Viewable Object much implement:
 
 ```cpp
 class DeviceViewable
@@ -141,8 +143,60 @@ void replace(VectorView<float> view_vec,
 You can see that here we don't need to change the function body and only need to change
 the function header.
 
+### Why it is reusable
 
+First, the compiler itself is nothing special as a C library, except that it is only available 
+as a shared library, don't know why NVIDIA doesn't provide a static version. It is used together
+with the CUDA driver API, which is also nothing special.
 
+Second, the library APIs are also nothing special. All it exposes are compiled C/C++ APIs. 
 
+These compiled APIs can be called from any programming language that has a C-interop capability.
+Classes like "DeviceViewable" can be wrapped as a classes in the target languages. This requires
+the target language supports OO programming though, which most of them do nowadays.
 
+Therefore, you can find very similar functions in the C++/Python/C#/JAVA versions of ThrustRTC:
 
+```cpp
+// C++
+bool TRTC_Replace(DVVectorLike& vec, 
+                  const DeviceViewable& old_value, 
+                  const DeviceViewable& new_value);
+```
+
+```python
+# Python
+def Replace(vec, old_value, new_value):
+    ...
+```
+
+```cs
+// C#
+using ThrustRTCLR;
+
+namespace ThrustRTCSharp
+{
+    public partial class TRTC
+    {
+        ...
+        public static bool Replace(DVVectorLike vec, 
+                                   DeviceViewable old_value, 
+                                   DeviceViewable new_value)    
+        ...
+    }
+}
+```
+
+```java
+// JAVA
+package JThrustRTC;
+
+public class TRTC 
+{
+    ...
+    public static boolean Replace(DVVectorLike vec, 
+                                  DeviceViewable old_value, 
+                                  DeviceViewable new_value)
+    ...
+}
+```
