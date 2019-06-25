@@ -220,7 +220,7 @@ executed for the first time (the compilation time is moved to here!).
 
 The fact that CUDA is so widely used these days makes it a broad area to explore: 
 
-How does the alternative paradigm behave in each of the application fields of CUDA?
+**How does the alternative paradigm compares to CUDA runtime in each of the application fields of CUDA?**
 
 At the time this article is written. I have only finished ThrustRTC, and it is the first 
 time we can compare it with Thrust.
