@@ -29,7 +29,7 @@ void thrust::replace(ForwardIterator first,
 ```
 
 This is just a simple example of a function provided by Thrust. All parameters are templated. "T" can be
-anything that has a definition, and "ForwardIterator" should "T_*" or something compatible. Functions 
+anything that has a definition, and "ForwardIterator" should "T\*" or something compatible. Functions 
 like this can be very powerful and useful, but they are only available to C++.
 
 ## Run-time compilation and dynamic-instantiation
