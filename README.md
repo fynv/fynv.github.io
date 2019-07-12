@@ -26,6 +26,11 @@ Project Page:
 Documentations:
 [https://fynv.github.io/ThrustRTC/](https://fynv.github.io/ThrustRTC/)
 
+### CURandRTC - Random number generator
+
+Project Page:
+[https://github.com/fynv/CURandRTC](https://github.com/fynv/CURandRTC)
+
 ## Music & Singing Synthesizer
 
 ### ScoreDraft
