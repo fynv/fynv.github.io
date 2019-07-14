@@ -31,6 +31,11 @@ Documentations:
 Project Page:
 [https://github.com/fynv/CURandRTC](https://github.com/fynv/CURandRTC)
 
+### RTRTC - Ray-tracing
+
+Project Page:
+[https://github.com/fynv/RTRTC](https://github.com/fynv/RTRTC)
+
 ## Music & Singing Synthesizer
 
 ### ScoreDraft
