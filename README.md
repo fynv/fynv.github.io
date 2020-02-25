@@ -16,6 +16,12 @@ This has been the motivation of my "NVRTC Based GPU libraries" series of project
 
 # My Projects
 
+## FeiRays - Vulkan based ray-tracing
+
+Project Page:
+[https://github.com/fynv/FeiRays](https://github.com/fynv/FeiRays)
+
+
 ## NVRTC Based GPU libraries
 
 ### ThrustRTC - Thrust-like standard library
