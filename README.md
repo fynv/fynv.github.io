@@ -1,6 +1,6 @@
 # Who is fynv
 
-Fei Yang, GPU software engineer working for NVIDIA, Beijing office.
+Fei Yang, former GPU software engineer of NVIDIA. Now working in my friend's start-up.
 
 # My Blogs
 
@@ -13,6 +13,12 @@ language that supports C/C++ interop.
 This has been the motivation of my "NVRTC Based GPU libraries" series of projects.
 
 [More](https://fynv.github.io/ProgrammingGPUAcrossTheLaunguageBoundaries.html)
+
+## Ray Tracing - What GPU Solves and Doesn't Solve
+
+As I quited NVIDIA recently, now I have more freedom of talking about not just the positive sides of GPUs.
+
+[More](https://fynv.github.io/RayTracingWhatGPUSolvesAndDoesntSolve.html)
 
 # My Projects
 
