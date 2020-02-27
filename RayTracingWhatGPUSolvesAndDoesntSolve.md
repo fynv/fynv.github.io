@@ -37,7 +37,7 @@ The new "ray-tracing" unit can be seen as lifting the restrictions on how the ra
 A straightforward utilization of the new "ray-tracing" unit is to use it to build a faster Monte Carol path-tracer. NVIDIA has already did that in its OptiX project. However, this doesn't immediately make Monte Carol path-tracing realtime. This is because of the fact that the new unit only accelerates the unit work, without reducing the inherent complexity of the problem. [FeiRays](https://github.com/fynv/FeiRays) is another attampt to do that. The difference is that [FeiRays](https://github.com/fynv/FeiRays) is based on Vulkan, and it is fully opensource. Currently, using DirectX 12 or Vulkan are the only ways for anyone outside NVIDIA to program the new unit at low-level. OptiX is built using some CUDA intrinsics that are only available inside NVIDIA. By using Vulkan, [FeiRays](https://github.com/fynv/FeiRays) uses the same hardware units as OptiX, but is a little less efficient because of API overheads and compiler optimizations.
 
 ![salle_de_bain.jpg](images/salle_de_bain.png)
-The "salle_de_bain" model rendered with FeiRays (900x600x1000 rays in 20 seconds).
+The "salle_de_bain" model rendered with FeiRays (900x600x2000 rays in 15.2 seconds).
 
 For games and other realtime applications, some more feasible utilizations of the hardware unit are non-recursive usages, such as reflections and shadow calculation. 
 
