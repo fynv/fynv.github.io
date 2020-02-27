@@ -41,7 +41,7 @@ The "salle_de_bain" model rendered with FeiRays (900x600x1000 rays in 20 seconds
 
 For games and other realtime applications, some more feasible utilizations of the hardware unit are non-recursive usages, such as reflections and shadow calculation. 
 
-The fact that the rays we are estimating in parallel do not need to relate to each other can result in some more interesting usages. One of them is for realtime global illumination - [DDGI](https://devblogs.nvidia.com/rtx-global-illumination-part-i/). [DDGI](https://devblogs.nvidia.com/rtx-global-illumination-part-i/) is an upgrade to probe-based global illumination. With ray-tracing, irradiance map of the probes can be updated much efficiently by shooting rays from the center of each probe. Using a temporal averaging scheme, the rendering result can approximate an infinite number of bounces.
+The fact that the rays we are estimating in parallel do not need to relate to each other can result in some more interesting usages. One of them is for realtime global illumination - [DDGI](https://devblogs.nvidia.com/rtx-global-illumination-part-i/). [DDGI](https://devblogs.nvidia.com/rtx-global-illumination-part-i/) is an upgrade to probe-based global illumination. With ray-tracing, irradiance map of the probes can be updated more efficiently by shooting rays from the center of each probe. Using a temporal averaging scheme, the rendering result can approximate an infinite number of bounces.
 
 
 
