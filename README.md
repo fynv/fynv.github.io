@@ -22,6 +22,13 @@ As I quited NVIDIA recently, now I have more freedom of talking about not just t
 
 # My Projects
 
+## VkInline
+
+A Python interface to access the computation/rasterization/ray-tracing functionalities of Vulkan. Can be used for GPU computing and off-screen rendering.
+
+Project Page:
+[https://github.com/fynv/vkinline](https://github.com/fynv/vkinline)
+
 ## FeiRays - Vulkan based ray-tracing
 
 Project Page:
