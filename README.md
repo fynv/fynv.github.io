@@ -69,13 +69,7 @@ ScoreDraft is a simple music/singing synthesizer that provides a Python based sc
 Project Page:
 [https://github.com/fynv/ScoreDraft](https://github.com/fynv/ScoreDraft)
 
-Website:
-[http://scoredraft.org](http://scoredraft.org)
+Documentations:
+[https://fynv.github.io/ScoreDraft/](https://fynv.github.io/ScoreDraft/)
 
-### SingingGadgets
-
-A refactoring of ScoreDraft, exposing low-level APIs for singing synthesis.
-
-Project Page:
-[https://github.com/fynv/SingingGadgets](https://github.com/fynv/SingingGadgets)
 
