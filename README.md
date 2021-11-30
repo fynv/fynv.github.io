@@ -72,4 +72,16 @@ Project Page:
 Documentations:
 [https://fynv.github.io/ScoreDraft/](https://fynv.github.io/ScoreDraft/)
 
+### ScoreDraftEditor
+
+YAML editor UI for ScoreDraft.
+
+Project Page:
+[https://github.com/fynv/ScoreDraftEditor](https://github.com/fynv/ScoreDraftEditor)
+
+Documentations:
+[https://fynv.github.io/ScoreDraftEditor/](https://fynv.github.io/ScoreDraftEditor/)
+
+
+
 
