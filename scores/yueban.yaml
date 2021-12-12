@@ -1,0 +1,187 @@
+score:
+    title: 月半小夜曲
+    composer: 河合奈保子
+    tempo: 80
+    staffs:
+        - relative: c'
+          instrument: FluidR3GM(40)
+          volume: 0.2
+          pan: 0.3
+          content: |
+            r2 r8 e c' b
+            c4. e,8 e e c' b
+            c4. f,8 f d b' a
+            b4. d,8 d8. g16 (g8) f8
+            f4. e16 d e8 e c' b
+            c4. e,8 e a b c
+            e4. d16 cis d2
+            b4. c16 d e4 gis,  
+            b8 a (a4) r8 e16 e c'8 b
+            c4. e,16 e r4 e8 g
+            g4. a16 f r8 d16 d b'8 a
+            b4. d,16 d r8 d g f
+            f4 f8 g16 e r8 e16 e c'8 b
+            c4. c16 e, r8 e a c
+            e4. d8 d4 r8 c
+            c4. c8 b4 d8 c16 c
+            (c8) b4. r8 e,16 e c'8 b
+            c4. e,16 e r4 e8 g
+            g4. a16 f r8 d16 d b'8 a
+            b4. d,16 d r8 d g f
+            f4 f8 g16 e r8 e16 e c'8 b
+            c4. e,8 r8 e a c
+            e4. d8 d4 r8 c
+            c2 b4 b8 c16 b
+            (b8) a4. r8 a b c 
+            c2 d4 b8 a16 g
+            (g4) e8 g16 a (a4) a8 b
+            c2 b8. c16 (c8) f 
+            (f1)
+            e2 r8 b c d
+            e8 c e c e c d e
+            g4. f16 f (f2)
+            d8 c b a16 g (g8) g a b 
+            f'4 e8 d16 e (e8) e a, b
+            c8 b c b r a b c
+            e4. d8 d4 r16 d e d
+            c4 r16 c d c b4 b8 c16 b
+            (b8) a (a2.)
+            
+            
+        - relative: c
+          instrument: FluidR3GM(1)
+          volume: 0.3
+          pan: -0.3
+          content: |
+            \clef "bass"
+            r1
+            a8 e' a c a c a e
+            f, c' f a f a f c
+            g d' g b g b g d
+            c, g' c e c e c g
+            a e' a c a c a e
+            d, a' d f d f d a
+            b f' b d e,, b' e gis
+            a, e' a c a c a e
+            a, e' a c a c a e
+            d, a' d f d f d a
+            g d' g b g b g d
+            c, g' c e c e c g
+            a e' a c a c a e
+            d, a' d f d f d a
+            f c' f a b,8 f' b d
+            e,, b' e gis e gis e b
+            a e' a c a c a e
+            d, a' d f d f d a
+            g d' g b g b g d
+            c, g' c e c e c g
+            a e' a c a c a e
+            d, a' d f d f d a
+            f c' f a e, b' e gis
+            a,8 e' a c a c a e
+            f, c' f a g, d' g b 
+            e,, b' e g a,8 e' a c
+            f,, c' f a d, a' d f
+            b,, f' <b d> f <b d> f <b d> <b d>
+            e,, b' <e gis> b <e gis> b <e gis> b
+            a e' <a c> e a, e' <a c> e
+            d a' <d f> a d, a' <d f> a 
+            g, d' <g b> d g, d' <g b> d
+            c g' <c e> g c, g' <c e> g 
+            a, e' <a c> e a, e' <a c> e
+            d a' <d f> a d, a' <d f> a 
+            f, c' <f a> c e, b' <e gis> b
+            a e' <a c> e <a c>2
+            
+          pedal: |
+            r1
+            bd
+            bd
+            bd
+            bd
+            bd
+            bd
+            bd2 bd
+            bd1
+            bd
+            bd
+            bd
+            bd
+            bd
+            bd
+            bd2 bd
+            bd1
+            bd
+            bd
+            bd
+            bd
+            bd
+            bd
+            bd2 bd
+            bd1
+            bd2 bd
+            bd bd
+            bd bd
+            bd1
+            bd
+            bd2 bd
+            bd bd
+            bd bd
+            bd bd
+            bd bd
+            bd bd
+            bd bd
+            bd1
+            
+        - is_drum: true
+          instrument: FluidR3GM(160)
+          content: |
+            r1
+            r
+            r
+            r
+            r
+            r
+            r
+            r
+            r
+            r
+            r
+            r
+            r
+            r
+            r
+            r
+            r2 r8 hh16 hh hh8 hh
+            bd8 hh hh hh r hh hh hh
+            bd8 hh hh hh r hh hh hh
+            bd8 hh hh hh r hh hh hh
+            bd8 hh hh hh r hh hh hh
+            bd8 hh hh hh r hh hh hh
+            bd8 hh hh hh r hh hh hh
+            bd8 hh hh hh r hh hh hh
+            bd8 hh hh hh r hh hh hh
+            bd4 hho bd8 hh hh hh
+            bd4 hho bd8 hh hh hh
+            bd4 hho bd8 hh hh hh
+            bd4 hho8 hho hho hho hho hho
+            bd4 hho bd16 tomfl tomfh toml bd tomml tommh tomh
+            bd8 hho sn hho bd hho sn hho
+            bd8 hho sn hho bd hho sn hho
+            bd8 hho sn hho bd hho sn hho
+            bd8 hho sn hho bd hho sn hho
+            bd8 hho sn hho bd hho sn hho
+            bd8 hho sn hho bd hho sn hho
+            bd16 tomfl tomfh toml sn4 bd16 tomml tommh tomh sn4 
+            bd16 hho hho hho hho8 hho hho2
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
