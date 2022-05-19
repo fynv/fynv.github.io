@@ -48,3 +48,10 @@ It might be possible to create a separate rendering context which is closer to t
 
 There are also some inherent issues about building a 3D rendering engine inside a web browser. One of them is that 3D rendering engines are extremely diversified. There are too many possibilities, and maybe non of them can become a standard and get a W3C approvement. Every engine company can make their own version of Chromium, and the only use-case would be inside their own proprietary products.
 
+
+## Possibility to do it the other way round
+
+As a graphics programmer, I'm able to write my own 3D rendering engine from scratch. Now that I've learnt how to wrap the interfaces using V8, I can build things like [Three.V8](https://github.com/fynv/Three.V8) which is already a little bit like a "browser". It seems possible for me to add more and more wheels, including network APIs into the engine then finally achieve the goal to "combine a game engine with a web browser". However, the amount of work seems to be even more huge.
+
+
+
