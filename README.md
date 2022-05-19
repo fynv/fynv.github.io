@@ -4,6 +4,16 @@ Fei Yang, former GPU software engineer of NVIDIA. Now working in my friend's sta
 
 # My Blogs
 
+##  Web Browser + Game Engine: Combining 2 Monsters
+
+In Metaverse development, it is becoming more and more crucial to have both modern web and modern graphics technologies working collaboratively in the same application.
+
+My opinion is that it is best we can combine a web browser with a game engine at native level. 
+
+This article tries to discuss why the 2 monsters should be and can be combined togther, and what are the current difficulties. By sharing my experience, I also want to persuade more people to join me to try to make it happen.
+
+[More](https://fynv.github.io/WebBrowserPlusGameEngine.html)
+
 ## Programming GPU across the Language Boundaries
 
 This article tries to illustrate the fact that NVRTC + dynamic-instantiation can be a powerful
