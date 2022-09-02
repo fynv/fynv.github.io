@@ -32,6 +32,13 @@ As I quited NVIDIA recently, now I have more freedom of talking about not just t
 
 # My Projects
 
+## Three.V8
+
+Embedabble 3D rendering engine using JavaScript as user script.
+
+Project Page:
+[https://github.com/fynv/Three.V8](https://github.com/fynv/Three.V8)
+
 ## LiveKit - Video Toolkit for Python
 
 Project Page:
