@@ -4,6 +4,18 @@ Fei Yang, former GPU software engineer of NVIDIA. Now working in my friend's sta
 
 # My Blogs
 
+## Cascaded Residual Encoding for HDR Lightmap Compression
+
+... During the development of the rendering engine [Three.V8](https://github.com/fynv/three.v8), we also hit this problem. Because of that the system is mobile & web targeting, transfer efficiency is among our top concerns. After testing several ideas, we found that a JPEG based solution performs surprisingly well.
+
+[More](https://fynv.github.io/Cascaded-Residual-Encoding-for-HDR-Lightmap-Compression/)
+
+## Mixed-resolution Grid of Light Probes
+
+This article introduces an experimental feature of the open-source project [Three.V8]( https://github.com/fynv/Three.V8), namely Mixed-resolution Grid of Light Probes (or LODProbeGrid which is used for coding). 
+
+[More](https://fynv.github.io/MixedResolutionGridOfLightProbes/)
+
 ##  Web Browser + Game Engine: Combining 2 Monsters
 
 In Metaverse development, it is becoming more and more crucial to have both modern web and modern graphics technologies working collaboratively in the same application.
